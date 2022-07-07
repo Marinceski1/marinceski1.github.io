@@ -1,0 +1,165 @@
+* {
+  background: #555555;
+  font-family: Verdana;
+  font-size: 20px;
+}
+
+#cssmenu > ul > li.active {
+  list-style: none;
+  text-decoration: none;
+}
+
+#cssmenu > ul > li.has-has {
+  list-style: none;
+  text-decoration: none;
+}
+
+#cssmenu > ul > li.last {
+  list-style: none;
+  text-decoration: none;
+}
+
+#cssmenu > ul {
+  display: inline-flex;
+}
+
+#cssmenu > ul > li.has-has > a > span {
+  padding-left: 100px;
+}
+
+#cssmenu > ul > li.last > a > span {
+  padding-left: 100px;
+}
+
+
+#cssmenu {
+  border-style: dotted;
+  border-width: thick;
+  width: 470px;
+  border-color: lime;
+  margin-left: 400px;
+}
+
+body > div > header > div.col-1-3 > div.header-text > h1 {
+  border-left: 6px solid red;
+}
+
+body > div > header > div.col-1-3 > div.header-text > p {
+  border: 15px solid orange;
+  padding: 50px;
+  margin: 20px;
+  font-weight: bold;
+}
+
+body > div > header > div.col-1-3 > div.header > div > hr {
+  display: none;
+}
+
+body > div > header > div.col-1-3 > div.header > div {
+  border-left: 4px solid red;
+}
+
+body > div > header > div.col-1-3 > p {
+  border: 15px solid orange;
+  padding: 50px;
+  margin: 20px;
+  font-weight: bold;
+}
+
+body > div > header > div.design > h3 {
+  border-left: 6px solid red;
+}
+
+body > div > header > p {
+  margin-left: 300px;
+}
+
+body > div > header > div.col-1-3 > div.header-text > h1 {
+  font-family: cursive;
+  font-weight: bold;
+}
+
+body > div > header > div.col-1-3 > div.header > div > h2 {
+  font-family: cursive;
+  font-weight: bold;
+}
+
+body > div > header > div.col-1-3 > div.header-text > p {
+  color: white;
+}
+
+body > div > header > div.col-1-3 > p {
+  color: white;
+}
+
+body > div > header > div.design > h3 {
+  font-family: cursive;
+  font-weight: bold;
+}
+
+body > div > header > p {
+  border: 15px solid orange;
+  padding: 50px;
+  margin: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+body > div > header > a {
+  position: relative;
+  text-decoration: none;
+  float: right;
+  margin-right: 8px;
+  border-style: double;
+  border-color: black;
+  font-weight: bold;
+}
+
+body > div > header > div.box-item-content > div > h3 {
+  display: inline-block;
+}
+
+body > div > header > div.box-item-content > div > h3 > a {
+  text-decoration: none;
+  padding-top: 40px;
+  color: black;
+  border-left: 6px solid red;
+  border-top: 3px;
+  display: inline-block;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+body > div > header > div.box-item-content > div > p {
+  border: 15px solid orange;
+  padding: 50px;
+  margin: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+body > div > header > div.box-item-content > div > div.box > h3 > a {
+  text-decoration: none;
+  color: black;
+  font-family: cursive;
+  font-weight: bold;
+  border-left: 6px solid red;
+}
+
+body > div > header > div.box-item-content > div > div.box > a {
+  display: inline-block;
+  padding-left: 150px;
+}
+
+
+body > div > header > div.box-item-content > div > div.box > a {
+  position: relative;
+  margin-left: 250px;
+}
+
+body > div > header > div.box-item-content > div > div.contactme {
+  display: inline-block;
+  border: 15px solid red;
+  border-style: double;
+  border-color: black;
+}
