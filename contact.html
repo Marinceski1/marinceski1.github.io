@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакт - CyberLearn Hub</title>
+    <style>
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .contact-section, .contact-info {
+            background-color: #ffffff;
+            padding: 50px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .contact-container {
+            width: 90%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 100%;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .contact-form label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .contact-form button {
+            padding: 14px 20px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .contact-form button:hover {
+            background-color: #2980b9;
+        }
+
+
+        .contact-info p {
+            font-size: 18px;
+            text-align: center;
+            color: #555;
+        }
+
+        .contact-info h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-top: 40px;
+        }
+
+
+        .back-btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: #27ae60;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            width: auto;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .back-btn:hover {
+            background-color: #2ecc71;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        /* Респонзивност */
+        @media (max-width: 768px) {
+            .contact-container {
+                width: 95%;
+            }
+
+            .contact-form {
+                max-width: 100%;
+            }
+
+            .contact-form button {
+                font-size: 16px;
+                padding: 12px 18px;
+            }
+
+            .back-btn {
+                font-size: 16px;
+                padding: 12px 18px;
+            }
+        }
+
+
+        .contact-info i {
+            color: #3498db;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: #3498db;
+            font-size: 18px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<section class="contact-section">
+    <div class="contact-container">
+        <h1>Контактирајте не</h1>
+        <p>Имаме решение за секој проблем во cybersecurity. Контактирајте не за повеќе информации или прашања!</p>
+
+
+        <form action="submit_form.php" method="POST" class="contact-form">
+        <form action="submit_form.php" method="POST" class="contact-form">
+            <label for="name">Вашето име:</label>
+            <input type="text" id="name" name="name" placeholder="Вашето име" required>
+
+            <label for="email">Вашиот e-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Вашиот e-mail" required>
+
+            <label for="message">Ваша порака:</label>
+            <textarea id="message" name="message" placeholder="Внесете ја вашата порака" rows="6" required></textarea>
+
+            <button type="submit" class="submit-btn">Испрати порака</button>
+
+
+        </form>
+        <a href="dashboard.html">
+            <button class="back-btn">Назад</button>
+        </a>
+        </form>
+    </div>
+
+</section>
+
+
+<section class="contact-info">
+    <div class="contact-container">
+        <h2>Контакт Информации</h2>
+        <p><i class="fas fa-envelope"></i><strong>Е-mail:</strong> <a href="mailto:info@cyberlearnhub.com">info@cyberlearnhub.com</a></p>
+        <p><i class="fas fa-envelope"></i><strong>Е-mail:</strong> <a href="mailto:ilija.marincheski@students.finki.ukim.mk">ilija.marincheski@students.finki.ukim.mk</a></p>
+        <p><i class="fas fa-envelope"></i><strong>Е-mail:</strong> <a href="mailto:elena.mihailova@students.finki.ukim.mk">elena.mihailova@students.finki.ukim.mk</a></p>
+        <p><i class="fas fa-phone"></i><strong>Телефон:</strong> <a href="tel:+38971490190">+389 71 490 190</a></p>
+        <p><i class="fas fa-phone"></i><strong>Телефон:</strong> <a href="tel:+38978369144">+389 78 369 144</a></p>
+        <p><i class="fas fa-map-marker-alt"></i><strong>Адреса:</strong> ул. Пример 123, Скопје, Македонија</p>
+    </div>
+</section>
+
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<script>
+    document.querySelector('.contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+
+
+        alert('Ви благодариме за пораката, ' + name + '. Ќе ве контактираме на вашиот e-mail: ' + email + '.');
+
+
+        window.location.href = 'dashboard.html';
+    });
+
+</script>
+
+</body>
+</html>
