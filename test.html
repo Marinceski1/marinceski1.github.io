@@ -302,10 +302,9 @@
             "q19": "A",
             "q20": "A",
 
-            // Точните одговори за останатите прашања
+
         };
 
-        // Проверување на одговорите
         for (var i = 1; i <= totalQuestions; i++) {
             var question = "q" + i;
             var selectedAnswer = document.querySelector('input[name="' + question + '"]:checked');
@@ -317,7 +316,7 @@
             }
         }
 
-        // Прикажување на резултатот
+
         var resultText = "Ви благодарам за учеството! Освоивте " + score + " поени од " + (totalQuestions * 5) + ".";
         if (score >= (totalQuestions * 5) / 2) {
             resultText += " Честитки, го положивте тестот!";
