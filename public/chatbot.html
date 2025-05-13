@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>CyberLearn Chatbot</title>
     <style>
@@ -324,78 +323,6 @@
           </div>
         </div>
       </div>
-    <script>
-        const API_KEY = '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'; // Replace with your API key
-        const chatMessages = document.getElementById('chat-messages');
-        const userInput = document.getElementById('user-input');
-        const sendBtn = document.getElementById('send-btn');
-        const loading = document.getElementById('loading');
-
-        function addMessage(message, isUser = true, messageId = null) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
-            if (messageId) messageDiv.id = messageId;
-            messageDiv.textContent = message;
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function generateId() {
-            return 'msg-' + Math.random().toString(36).substr(2, 9);
-        }
-
-        async function getAIResponse(prompt) {
-            try {
-                const response = await fetch('https://api.openai.com/v1/chat/completions', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${API_KEY.replace(/(\r\n|\n|\r)/gm, '')}`
-                    },
-                    body: JSON.stringify({
-                        model: "gpt-3.5-turbo",
-                        messages: [{role: "user", content: prompt}],
-                        temperature: 0.7
-                    })
-                });
-
-                if (!response.ok) {
-                    console.log(response);
-                    throw new Error(`API Error: ${response.status}`);
-                }
-
-                const data = await response.json();
-                return data.choices[0]?.message?.content?.trim() || "No response";
-            } catch (error) {
-                console.error('Error:', error);
-                return `Error: ${error.message}`;
-            }
-        }
-
-
-        sendBtn.addEventListener('click', async () => {
-            const message = userInput.value.trim();
-            if (!message) return;
-
-            addMessage(message, true);
-            userInput.value = '';
-
-            const loadingId = generateId();
-            addMessage('Се чека одговор...', false, loadingId);
-
-            const aiResponse = await getAIResponse(message);
-
-            const loadingMsg = document.getElementById(loadingId);
-            if (loadingMsg) {
-                loadingMsg.textContent = aiResponse;
-            }
-        });
-
-        userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                sendBtn.click();
-            }
-        });
-    </script>
+    <script src="/js/chatbot.js"></script>
 </body>
 </html>

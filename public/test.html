@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест за Безбедност на Интернет</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .test-container {
+            width: 70%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin-bottom: 10px;
+        }
+        .answers {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 20px auto;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .result {
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .answer-mark {
+            color: green;
+        }
+        #genBtn {
+            visibility: hidden;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="test-container">
+    <h1>Тест за Cybersecurity</h1>
+
+    <form id="quizForm">
+
+        <!-- ПРАШАЊЕ 1 -->
+        <div class="question">
+            <h3>1. Што е Cybersecurity?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q1" value="A"> A. Процес на заштита на компјутерски системи и мрежи</label>
+                <label><input type="radio" name="q1" value="B"> B. Процес на производство на нови технологији</label>
+                <label><input type="radio" name="q1" value="C"> C. Програма за автоматизација на интернетски процеси</label>
+            </div>
+        </div>
+
+        <!-- ПРАШАЊЕ 2 -->
+        <div class="question">
+            <h3>2. Кој е основниот принцип на заштита на податоци?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q2" value="A"> A. Примена на најефикасни алатки за шифрирање</label>
+                <label><input type="radio" name="q2" value="B"> B. Контролирање на физички пристап до податоците</label>
+                <label><input type="radio" name="q2" value="C"> C. Употреба на сложени лозинки и постојана промена на истите</label>
+            </div>
+        </div>
+
+
+        <!-- ПРАШАЊЕ 3 -->
+        <div class="question">
+            <h3>3. Која е функцијата на шифрирањето на податоците?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q3" value="A"> A. За заштита на податоците од неовластено читање</label>
+                <label><input type="radio" name="q3" value="B"> B. За следење на локацијата на податоците</label>
+                <label><input type="radio" name="q3" value="C"> C. За оптимизација на брзината на мрежата</label>
+            </div>
+        </div>
+
+        <!-- ПРАШАЊЕ 4 -->
+        <div class="question">
+            <h3>4. Што е DDoS напад?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q4" value="A"> A. Напад кој се состои од крадење на податоци</label>
+                <label><input type="radio" name="q4" value="B"> B. Напад кој ги оптоварува серверите со огромен број на барања за да ги откаже услугите</label>
+                <label><input type="radio" name="q4" value="C"> C. Напад кој користи вируси за да ја зарази целата мрежа</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>5. Што е ransomware напад?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q5" value="A"> A. Напад каде што напаѓачите бараат откуп за да ги вратат податоците</label>
+                <label><input type="radio" name="q5" value="B"> B. Напад кој ја контролира компјутерската опрема за да ја злоупотреби</label>
+                <label><input type="radio" name="q5" value="C"> C. Напад што користи социјален инженеринг за да добие пристап до податоците</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3>6. Што претставува етичкото хакирање и која е неговата главна цел?</h3>
+            <div class="answers">
+                <label><input type="radio" name="q6" value="A"> A. Процес на тестирање на безбедноста на системите</label>
+                <label><input type="radio" name="q6" value="B"> B. Начин на креирање злонамерен софтвер</label>
+                <label><input type="radio" name="q6" value="C"> C. Метод за кршење на лозинки</label>
+            </div>
+        <div class="question">
+                <h3>7. Кои алатки се користат за скенирање на мрежи во етичкото хакирање?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q7" value="A"> A. Nmap и Netcat</label>
+                    <label><input type="radio" name="q7" value="B"> B. Photoshop и Illustrator</label>
+                    <label><input type="radio" name="q7" value="C"> C. Word и Excel</label>
+                </div>
+        </div>
+
+            <div class="question">
+                <h3>8. Каква е улогата на експлоатацијата на ранливости во процесот на етичкото хакирање?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q8" value="A"> A. Овозможува тестирање на слабостите во системот</label>
+                    <label><input type="radio" name="q8" value="B"> B. Користи енкрипција за заштита на податоци</label>
+                    <label><input type="radio" name="q8" value="C"> C. Го подобрува графичкиот дизајн на веб-страни</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>9. Зошто е важно да се подготви детален извештај по завршување на тестирањето за безбедност?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q9" value="A"> A. За да се документираат откриените слабости и препораки</label>
+                    <label><input type="radio" name="q9" value="B"> B. За да се зачува лозинката на тестираниот систем</label>
+                    <label><input type="radio" name="q9" value="C"> C. За да се сподели со хакерите</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>10. Кои се некои од стратегиите за заштита на системите од напади?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q10" value="A"> A. Криптирање на податоци и мултифакторска автентикација</label>
+                    <label><input type="radio" name="q10" value="B"> B. Оставање на системот без лозинка</label>
+                    <label><input type="radio" name="q10" value="C"> C. Споделување на доверливи информации</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>11. Кој е главниот метод за заштита од SQL инјекции?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q11" value="A"> A. Користење на параметризирани SQL изјави</label>
+                    <label><input type="radio" name="q11" value="B"> B. Оставање на базата без заштита</label>
+                    <label><input type="radio" name="q11" value="C"> C. Забрана на внесување на податоци</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>12. Кој е еден од најефикасните начини за заштита од DDoS напади?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q12" value="A"> A. Користење на cloud-based заштита како Cloudflare</label>
+                    <label><input type="radio" name="q12" value="B"> B. Оставење на серверот без firewall</label>
+                    <label><input type="radio" name="q12" value="C"> C. Забрана на пристап за сите корисници</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>13. Што е целта на криптирањето?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q13" value="A"> A. Претворање на податоците во нечитлива форма за заштита</label>
+                    <label><input type="radio" name="q13" value="B"> B. Отворање на системот за сите корисници</label>
+                    <label><input type="radio" name="q13" value="C"> C. Намалување на брзината на мрежата</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>14. Како функционира многуфакторската автентикација (MFA)?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q14" value="A"> A. Бара повеќе од еден доказ за автентикација</label>
+                    <label><input type="radio" name="q14" value="B"> B. Користи само едноставна лозинка</label>
+                    <label><input type="radio" name="q14" value="C"> C. Го исклучува корисникот по првото неуспешно најавување</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>15. Кои стратегии се користат за превенција на напади?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q15" value="A"> A. Редовно ажурирање на софтверот и употреба на антивирусни програми</label>
+                    <label><input type="radio" name="q15" value="B"> B. Оставање на системот без заштита</label>
+                    <label><input type="radio" name="q15" value="C"> C. Споделување на лозинки со сите корисници</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>16. Кој е најчестиот метод што се користи при phishing напади?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q16" value="A"> A. Испраќање лажни е-пораки кои изгледаат како да доаѓаат од доверливи извори</label>
+                    <label><input type="radio" name="q16" value="B"> B. Хакерски напад на серверите на компанијата</label>
+                    <label><input type="radio" name="q16" value="C"> C. Присилно барање лозинка преку телефонски повик</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>17. Како можете да препознаете сомнителна е-пошта што може да биде phishing напад?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q17" value="A"> A. Содржи итни барања за внесување на лични податоци</label>
+                    <label><input type="radio" name="q17" value="B"> B. Има правописни и граматички грешки</label>
+                    <label><input type="radio" name="q17" value="C"> C. Двете горенаведени</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>18. Кој од следниве протоколи се користи за безбедна комуникација преку интернет?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q18" value="A"> A. SSL/TLS</label>
+                    <label><input type="radio" name="q18" value="B"> B. HTTP</label>
+                    <label><input type="radio" name="q18" value="C"> C. FTP</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>19. Кој безбедносен механизам е најсоодветен за заштита на безжични мрежи?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q19" value="A"> A. WPA3</label>
+                    <label><input type="radio" name="q19" value="B"> B. WEP</label>
+                    <label><input type="radio" name="q19" value="C"> C. Отворена мрежа (без лозинка)</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <h3>20. Кој од следниве напади се заснова на преслушување на мрежниот сообраќај?</h3>
+                <div class="answers">
+                    <label><input type="radio" name="q20" value="A"> A. Sniffing</label>
+                    <label><input type="radio" name="q20" value="B"> B. Denial of Service (DoS)</label>
+                    <label><input type="radio" name="q20" value="C"> C. SQL Injection</label>
+                </div>
+            </div>
+
+
+        <!-- ОСТАНАТИ ПРАШАЊА (од 6 до 20) се додаваат на сличен начин -->
+
+        <button type="button" onclick="submitQuiz()">Поднеси</button>
+
+            <button type="button" onclick="genCertificate()" id="genBtn">Генерирај сертификат</button>
+        </div>
+        </form>
+
+
+
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+    function submitQuiz() {
+        var totalQuestions = 20;
+        var score = 0;
+        var correctAnswers = {
+            "q1": "A",
+            "q2": "B",
+            "q3": "A",
+            "q4": "B",
+            "q5": "A",
+            "q6": "A",
+            "q7": "A",
+            "q8": "A",
+            "q9": "A",
+            "q10": "A",
+            "q11": "A",
+            "q12": "A",
+            "q13": "A",
+            "q14": "A",
+            "q15": "A",
+            "q16": "A",
+            "q17": "C",
+            "q18": "A",
+            "q19": "A",
+            "q20": "A",
+
+
+        };
+
+        for (var i = 1; i <= totalQuestions; i++) {
+            var question = "q" + i;
+            var selectedAnswer = document.querySelector('input[name="' + question + '"]:checked');
+            if (selectedAnswer && selectedAnswer.value === correctAnswers[question]) {
+                score += 5;  // Секое прашање носи 5 поени
+                document.querySelector('input[name="' + question + '"][value="' + correctAnswers[question] + '"]').parentElement.classList.add('correct');
+            } else if (selectedAnswer) {
+                document.querySelector('input[name="' + question + '"][value="' + selectedAnswer.value + '"]').parentElement.classList.add('incorrect');
+            }
+        }
+
+
+        var resultText = "Ви благодарам за учеството! Освоивте " + score + " поени од " + (totalQuestions * 5) + ".";
+        if (score >= (totalQuestions * 5) / 2) {
+            resultText += " Честитки, го положивте тестот!";
+            document.getElementById("genBtn").style.visibility='visible';
+        } else {
+            resultText += " За жал, не го положивте тестот.";
+        }
+        document.getElementById('result').innerHTML = resultText;
+    }
+    function genCertificate() {
+        window.location.href = "/cert/Cybersecurity_Certificate_Template.pdf"
+    }
+
+</script>
+
+</body>
+</html>

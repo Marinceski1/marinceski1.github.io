@@ -1,0 +1,653 @@
+<!doctype html>
+<html>
+<html lang="mk">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<title>Cybersecurity Simulator</title>
+<body>
+
+<style>
+    .round {
+        float: left;
+        margin: 10px;
+    }
+
+    .round .defence_list {
+        min-width: 250px;
+        min-height: 200px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+    }
+
+    h3, b {
+        display: inline
+    }
+
+    .sep {
+        clear: both;
+    }
+
+    .score {
+        clear: both;
+        min-height: 20px;
+    }
+
+    .score_title {
+        float: left;
+        height: 10px;
+        width: 200px;
+    }
+
+    .score_value {
+        float: left;
+        width: 20px;
+    }
+
+    .score_bar {
+        float: left;
+        background-color: steelblue;
+        text-align: right;
+        padding: 3px;
+        margin: 1px;
+        color: white;
+        height: 20px;
+        width: 1px;
+    }
+
+
+
+    .physical_defence.defence               { color: brown; }
+    .physical_defence .score_value          { color: brown; }
+    .physical_defence .score_bar { background-color: brown; }
+
+    .advanced_cyber_defence.defence               { color: red; }
+    .advanced_cyber_defence .score_value          { color: red; }
+    .advanced_cyber_defence .score_bar { background-color: red; }
+
+    .cyber_defence.defence               { color: orange; }
+    .cyber_defence .score_value          { color: orange; }
+    .cyber_defence .score_bar { background-color: orange; }
+
+    .data_defence.defence               { color: orchid; }
+    .data_defence .score_value          { color: orchid; }
+    .data_defence .score_bar { background-color: orchid; }
+
+    .intelligence_gathering.defence               { color: blue; }
+    .intelligence_gathering .score_value          { color: blue; }
+    .intelligence_gathering .score_bar { background-color: blue; }
+
+    .human_factors.defence               { color: green; }
+    .human_factors .score_value          { color: green; }
+    .human_factors .score_bar { background-color: green; }
+
+
+
+    .attack {
+        clear: left;
+    }
+
+    .attack_title {
+        float: left;
+        width: 270px;
+        font-size: 125%;
+        font-weight: bold;
+    }
+
+    .attack_step_title {
+        font-weight: bold;
+        height: 10px;
+    }
+
+    .attack_step {
+        float: left;
+        width: 280px;
+        min-height: 85px;
+        outline: 5px solid white;
+    }
+
+    .attack_step_counters li {
+        font-size: 75%;
+    }
+
+    .attack_step.countered {
+        background-color: rgba(24, 240, 24, 0.45);
+    }
+
+
+    .attack_step.uncountered {
+        background-color: rgba(240, 24, 24, 0.54);
+    }
+
+
+    .narrative_title {
+        font-weight: bold;
+        font-size: 125%;
+        width: 270px;
+        max-width: 270px;
+        min-height: 85px;
+        float: left;
+    }
+    .narrative_text_ongoing {
+        float: left;
+        max-width: 1120px;
+    }
+    .narrative_text_countered {
+        float: left;
+        max-width: 1120px;
+    }
+</style>
+<div class="w3-theme-light">
+    <div id="uninvested" class="round">
+        <h1>Uninvested</h1>
+        <h3>Budget: </h3><b class="budget">-500</b><b>k</b>
+        <div id="uninvested_defence_list"
+             class="defence_list"
+             ondrop="drop(event)"
+             ondragover="allowDrop(event)"></div>
+    </div>
+    <div id="round_1" class="round">
+        <h1>Round 1</h1>
+        <h3>Budget: </h3><b class="budget">100</b><b>k</b>
+        <div class="defence_list"
+             ondrop="drop(event)"
+             ondragover="allowDrop(event)"></div>
+    </div>
+    <div id="round_2" class="round">
+        <h1>Round 2</h1>
+        <h3>Budget: </h3><b class="budget">200</b><b>k</b>
+        <div class="defence_list"
+             ondrop="drop(event)"
+             ondragover="allowDrop(event)"></div>
+    </div>
+    <div id="round_3" class="round">
+        <h1>Round 3</h1>
+        <h3>Budget: </h3><b class="budget">300</b><b>k</b>
+        <div class="defence_list"
+             ondrop="drop(event)"
+             ondragover="allowDrop(event)"></div>
+    </div>
+    <div id="round_4" class="round">
+        <h1>Round 4</h1>
+        <h3>Budget: </h3><b class="budget">400</b><b>k</b>
+        <div class="defence_list"
+             ondrop="drop(event)"
+             ondragover="allowDrop(event)"></div>
+    </div>
+</div>
+
+<h1 class="sep">Scores:</h1>
+
+<div class=scores>
+
+    <div class="score physical_defence">
+        <div class="score_title">Physical Protection:</div>
+        <div class="score_value">0</div>
+        <div class="score_bar"></div>
+    </div>
+
+    <div class="score advanced_cyber_defence">
+        <div class="score_title">Advanced Cyber:</div>
+        <div class="score_value">0</div>
+        <div class="score_bar"></div>
+    </div>
+
+    <div class="score cyber_defence">
+        <div class="score_title">Basic Cyber:</div>
+        <div class="score_value">0</div>
+        <div class="score_bar"></div>
+    </div>
+
+    <div class="score data_defence">
+        <div class="score_title">Data Protection:</div>
+        <div class="score_value">0</div>
+        <div class="score_bar"></div>
+    </div>
+
+    <div class="score intelligence_gathering">
+        <div class="score_title">Intelligence Gathering:</div>
+        <div class="score_value">0</div>
+        <div class="score_bar"></div>
+    </div>
+
+    <div class="score human_factors">
+        <div class="score_title">Human Factors:</div>
+        <div class="score_value">0</div>
+        <div class="score_bar"></div>
+    </div>
+
+</div>
+
+
+<div class="attacks_table">
+
+    <h1>Attacks table</h1>
+
+    <div class="attack" id="Scanning Kiddie">
+        <div class="attack_title">Scanning Kiddie</div>
+        <div class="attack_step as_1 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_2 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_3 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_4 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+    </div>
+
+    <div class="attack" id="DoSing Kiddie">
+        <div class="attack_title">DoSing Kiddie</div>
+        <div class="attack_step as_1 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_2 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_3 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_4 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+    </div>
+
+    <div class="attack" id="Hacking Kiddie">
+        <div class="attack_title">Hacking Kiddie</div>
+        <div class="attack_step as_1 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_2 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_3 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_4 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+    </div>
+
+    <div class="attack" id="Phishing Kiddie">
+        <div class="attack_title">Phishing Kiddie</div>
+        <div class="attack_step as_1 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_2 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_3 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_4 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+    </div>
+
+    <div class="attack" id="Mafia APT PC Offices">
+        <div class="attack_title">Mafia APT PC Offices</div>
+        <div class="attack_step as_1 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_2 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_3 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_4 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+    </div>
+
+    <div class="attack" id="Mafia APT Server Offices">
+        <div class="attack_title">Mafia APT Server Offices</div>
+        <div class="attack_step as_1 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_2 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_3 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_4 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+    </div>
+
+    <div class="attack" id="Mafia APT Server Plant">
+        <div class="attack_title">Mafia APT Server Plant</div>
+        <div class="attack_step as_1 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_2 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_3 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_4 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+    </div>
+
+    <div class="attack" id="Mafia Disruption Controller">
+        <div class="attack_title">Mafia Disruption Controller</div>
+        <div class="attack_step as_1 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_2 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_3 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_4 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+    </div>
+
+    <div class="attack" id="Nation State Intelligence">
+        <div class="attack_title">Nation State Intelligence</div>
+        <div class="attack_step as_1 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_2 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_3 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_4 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+    </div>
+
+    <div class="attack" id="Nation State Disruption">
+        <div class="attack_title">Nation State Disruption</div>
+        <div class="attack_step as_1 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_2 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_3 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+        <div class="attack_step as_4 uncountered">
+            <div class="attack_step_title"></div>
+            <ul class="attack_step_counters"></ul>
+        </div>
+    </div>
+
+</div>
+
+<div id="attack_narratives" class="sep">
+
+    <h1>Attack narratives</h1>
+
+    <h2>Round 1</h2>
+    <div class="narrative_round_1">
+        <div class="Scanning Kiddie">
+            <div class="narrative_title">Scanning Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="DoSing Kiddie">
+            <div class="narrative_title">DoSing Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Hacking Kiddie">
+            <div class="narrative_title">Hacking Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Phishing Kiddie">
+            <div class="narrative_title">Phishing Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia APT PC Offices">
+            <div class="narrative_title">Mafia APT PC Offices</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia APT Server Offices">
+            <div class="narrative_title">Mafia APT Server Offices</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia APT Server Plant">
+            <div class="narrative_title">Mafia APT Server Plant</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia Disruption Controller">
+            <div class="narrative_title">Mafia Disruption Controller</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Nation State Intelligence">
+            <div class="narrative_title">Nation State Intelligence</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Nation State Disruption">
+            <div class="narrative_title">Nation State Disruption</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+    </div>
+
+    <h2>Round 2</h2>
+    <div class="narrative_round_2">
+        <div class="Scanning Kiddie">
+            <div class="narrative_title">Scanning Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="DoSing Kiddie">
+            <div class="narrative_title">DoSing Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Hacking Kiddie">
+            <div class="narrative_title">Hacking Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Phishing Kiddie">
+            <div class="narrative_title">Phishing Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia APT PC Offices">
+            <div class="narrative_title">Mafia APT PC Offices</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia APT Server Offices">
+            <div class="narrative_title">Mafia APT Server Offices</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia APT Server Plant">
+            <div class="narrative_title">Mafia APT Server Plant</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia Disruption Controller">
+            <div class="narrative_title">Mafia Disruption Controller</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Nation State Intelligence">
+            <div class="narrative_title">Nation State Intelligence</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Nation State Disruption">
+            <div class="narrative_title">Nation State Disruption</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+    </div>
+
+    <h2>Round 3</h2>
+    <div class="narrative_round_3">
+        <div class="Scanning Kiddie">
+            <div class="narrative_title">Scanning Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="DoSing Kiddie">
+            <div class="narrative_title">DoSing Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Hacking Kiddie">
+            <div class="narrative_title">Hacking Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Phishing Kiddie">
+            <div class="narrative_title">Phishing Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia APT PC Offices">
+            <div class="narrative_title">Mafia APT PC Offices</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia APT Server Offices">
+            <div class="narrative_title">Mafia APT Server Offices</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia APT Server Plant">
+            <div class="narrative_title">Mafia APT Server Plant</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia Disruption Controller">
+            <div class="narrative_title">Mafia Disruption Controller</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Nation State Intelligence">
+            <div class="narrative_title">Nation State Intelligence</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Nation State Disruption">
+            <div class="narrative_title">Nation State Disruption</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+    </div>
+
+    <h2>Round 4</h2>
+    <div class="narrative_round_4">
+        <div class="Scanning Kiddie">
+            <div class="narrative_title">Scanning Kiddie</div>
+            <p class="narrative_text"></p>
+        </div>
+        <div class="sep"/>
+        <div class="DoSing Kiddie">
+            <div class="narrative_title">DoSing Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Hacking Kiddie">
+            <div class="narrative_title">Hacking Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Phishing Kiddie">
+            <div class="narrative_title">Phishing Kiddie</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia APT PC Offices">
+            <div class="narrative_title">Mafia APT PC Offices</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia APT Server Offices">
+            <div class="narrative_title">Mafia APT Server Offices</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia APT Server Plant">
+            <div class="narrative_title">Mafia APT Server Plant</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Mafia Disruption Controller">
+            <div class="narrative_title">Mafia Disruption Controller</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Nation State Intelligence">
+            <div class="narrative_title">Nation State Intelligence</div>
+            <div class="narrative_text"></div>
+        </div>
+        <div class="sep"/>
+        <div class="Nation State Disruption">
+            <div class="narrative_title">Nation State Disruption</div>
+            <div class="narrative_text"></div>
+        </div>
+    </div>
+</div>
+
+<script src="debrief.js"></script>
+
+</body>
+</html>
