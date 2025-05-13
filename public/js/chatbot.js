@@ -17,7 +17,7 @@ function generateId() {
 
 async function getAIResponse(prompt) {
     try {
-        const response = await fetch('/api/chat', {
+        const response = await fetch('https://chatapi-blush.vercel.app/api/chat', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
